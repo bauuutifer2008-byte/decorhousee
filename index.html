@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>decorhouse | Cuadros y Marcos Artesanales</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet"/>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        try {
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "tertiary": "#00181f",
+                            "on-secondary-fixed-variant": "#004d64",
+                            "primary-fixed-dim": "#a8caef",
+                            "surface-bright": "#f7f9fb",
+                            "tertiary-container": "#002e39",
+                            "surface-variant": "#e0e3e5",
+                            "on-secondary-fixed": "#001f2a",
+                            "surface-container-lowest": "#ffffff",
+                            "inverse-on-surface": "#eff1f3",
+                            "surface-dim": "#d8dadc",
+                            "on-primary-fixed": "#001d34",
+                            "on-tertiary-fixed": "#001f27",
+                            "tertiary-fixed": "#b2ebff",
+                            "outline-variant": "#c3c7ce",
+                            "error": "#ba1a1a",
+                            "inverse-surface": "#2d3133",
+                            "primary-fixed": "#cfe5ff",
+                            "on-secondary": "#ffffff",
+                            "error-container": "#ffdad6",
+                            "surface-tint": "#406182",
+                            "tertiary-fixed-dim": "#69d4f4",
+                            "secondary-fixed-dim": "#93cfeb",
+                            "on-surface": "#191c1e",
+                            "background": "#f7f9fb",
+                            "outline": "#73777e",
+                            "surface-container": "#eceef0",
+                            "secondary-container": "#a6e2ff",
+                            "on-tertiary-container": "#1f9dbb",
+                            "inverse-primary": "#a8caef",
+                            "surface-container-highest": "#e0e3e5",
+                            "surface-container-high": "#e6e8ea",
+                            "on-surface-variant": "#42474d",
+                            "on-tertiary-fixed-variant": "#004e5f",
+                            "surface-container-low": "#f2f4f6",
+                            "on-tertiary": "#ffffff",
+                            "primary-container": "#002b49",
+                            "on-secondary-container": "#24667f",
+                            "on-primary": "#ffffff",
+                            "primary": "#001629",
+                            "on-error-container": "#93000a",
+                            "secondary-fixed": "#bde9ff",
+                            "on-background": "#191c1e",
+                            "surface": "#f7f9fb",
+                            "on-primary-container": "#7293b6",
+                            "on-error": "#ffffff",
+                            "secondary": "#24657e",
+                            "on-primary-fixed-variant": "#274969"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                        },
+                        "spacing": {
+                            "container-max": "1280px",
+                            "margin-mobile": "24px",
+                            "margin-desktop": "64px",
+                            "unit": "8px",
+                            "gutter": "24px",
+                            "section-gap": "120px"
+                        },
+                        "fontFamily": {
+                            "body-md": ["Manrope"],
+                            "label-md": ["Manrope"],
+                            "headline-lg": ["Playfair Display"],
+                            "headline-lg-mobile": ["Playfair Display"],
+                            "display": ["Playfair Display"],
+                            "headline-md": ["Playfair Display"],
+                            "body-lg": ["Manrope"],
+                            "label-sm": ["Manrope"]
+                        },
+                        "fontSize": {
+                            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                            "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                            "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+                            "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                            "display": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                            "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                        }
+                    }
+                }
+            }
+        } catch (_e) {}
+    </script>
+    <style>
+        /* Custom styles for Glassmorphism & Framer Preview */
+        .glassmorphic {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .dark .glassmorphic {
+            background: rgba(0, 22, 41, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-header {
+            background: rgba(247, 249, 25b, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .dark .glass-header {
+            background: rgba(25, 28, 30, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .card-lift {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 43, 73, 0.08);
+        }
+        /* Custom Frame styles */
+        .frame-preview-container {
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.05), 0 30px 60px rgba(0, 43, 73, 0.12);
+        }
+        .frame-oak {
+            border-image: linear-gradient(to right, #cfaf87, #e2c6a0, #bd9e74, #e2c6a0, #cfaf87) 20;
+            background-color: #dcb382;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.2);
+        }
+        .frame-black {
+            border-image: linear-gradient(to right, #111, #222, #050505, #222, #111) 20;
+            background-color: #1a1a1a;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4), inset 0 2px 4px rgba(255,255,255,0.1);
+        }
+        .frame-white {
+            border-image: linear-gradient(to right, #eceaea, #ffffff, #dcdbdb, #ffffff, #eceaea) 20;
+            background-color: #f7f7f7;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15), inset 0 2px 4px rgba(255,255,255,1);
+            border: 1px solid #dcdcdc;
+        }
+        .mat-border {
+            box-shadow: inset 0 0 8px rgba(0,0,0,0.15);
+        }
+        .reflection-layer {
+            background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0) 41%, rgba(255,255,255,0) 100%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body id="inicio" class="antialiased selection:bg-secondary selection:text-on-secondary bg-background text-on-background font-body-md transition-opacity duration-300">
+
+    <!-- Announcement Bar -->
+    <div class="bg-primary text-on-primary font-body-md text-xs sm:text-sm py-2 px-margin-mobile md:px-margin-desktop text-center tracking-wider transition-all duration-300">
+        Envío gratis a todo el país | WhatsApp: +54 2646124958
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="glass-header border-b border-outline-variant/30 shadow-sm sticky top-0 z-40 transition-all duration-300">
+        <div class="flex flex-col w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="flex items-center justify-between h-20">
+                <!-- Mobile Navigation Button -->
+                <button class="text-primary hover:text-secondary md:hidden transition-colors duration-300" id="nav-menu-btn" aria-label="Abrir menú">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+
+                <!-- Brand / Logo -->
+                <a class="font-display text-2xl sm:text-3xl font-bold tracking-tight text-primary hover:opacity-90 transition-opacity" href="#inicio">
+                    decorhouse
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex items-center gap-10">
+                    <a class="font-label-md text-sm uppercase tracking-widest text-primary hover:text-secondary relative group py-2" href="#inicio">
+                        Inicio
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a class="font-label-md text-sm uppercase tracking-widest text-primary hover:text-secondary relative group py-2" href="#productos">
+                        Catálogo
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a class="font-label-md text-sm uppercase tracking-widest text-primary hover:text-secondary relative group py-2" href="#personalizados">
+                        Personalizados
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a class="font-label-md text-sm uppercase tracking-widest text-primary hover:text-secondary relative group py-2" href="#contacto">
+                        Contacto
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+
+                <!-- Actions (Cart) -->
+                <button class="text-primary hover:text-secondary transition-colors duration-300 relative p-2" id="cart-btn" aria-label="Ver carrito">
+                    <span class="material-symbols-outlined text-3xl">shopping_cart</span>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-secondary text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Drawer (Mobile) -->
+    <div class="fixed inset-0 z-50 hidden transition-opacity duration-300 opacity-0" id="nav-drawer">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-xs" id="nav-backdrop"></div>
+        <div class="drawer-content absolute top-0 left-0 w-80 h-full bg-surface shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+            <div class="p-6 border-b border-surface-variant flex justify-between items-center bg-surface-container-low">
+                <span class="font-display text-2xl font-bold text-primary">decorhouse</span>
+                <button class="text-primary hover:text-secondary transition-colors" id="close-nav" aria-label="Cerrar menú">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            <nav class="flex-1 overflow-y-auto p-8 flex flex-col gap-8 bg-surface">
+                <a class="font-label-md text-base uppercase tracking-wider text-primary hover:text-secondary transition-colors" href="#inicio">Inicio</a>
+                <a class="font-label-md text-base uppercase tracking-wider text-primary hover:text-secondary transition-colors" href="#productos">Catálogo</a>
+                <a class="font-label-md text-base uppercase tracking-wider text-primary hover:text-secondary transition-colors" href="#personalizados">Personalizados</a>
+                <a class="font-label-md text-base uppercase tracking-wider text-primary hover:text-secondary transition-colors" href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div class="fixed inset-0 z-50 hidden transition-opacity duration-300 opacity-0" id="cart-drawer">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-xs" id="cart-backdrop"></div>
+        <div class="drawer-content absolute top-0 right-0 w-full sm:w-[450px] h-full bg-surface shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col bg-surface-container-lowest">
+            <div class="p-6 border-b border-surface-variant flex justify-between items-center bg-surface-container-low">
+                <span class="font-headline-md text-xl font-bold text-primary flex items-center gap-2">
+                    <span class="material-symbols-outlined">shopping_bag</span> Tu Carrito
+                </span>
+                <button class="text-primary hover:text-secondary transition-colors" id="close-cart" aria-label="Cerrar carrito">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            
+            <!-- Cart Items Container -->
+            <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 flex flex-col gap-6">
+                <!-- Items dynamically injected here -->
+                <div class="flex-1 flex flex-col items-center justify-center text-center gap-6 py-20" id="empty-cart-message">
+                    <span class="material-symbols-outlined text-7xl text-outline-variant">shopping_bag</span>
+                    <p class="font-body-lg text-lg text-on-surface-variant font-medium">Tu carrito está vacío</p>
+                    <button class="bg-primary text-on-primary px-8 py-3.5 rounded font-label-md text-sm border border-primary hover:bg-primary-container transition-colors w-full uppercase tracking-wider font-semibold shadow-md" id="continue-shopping">Continuar comprando</button>
+                </div>
+            </div>
+
+            <!-- Cart Footer (Checkout Form) -->
+            <div id="cart-footer" class="p-6 border-t border-surface-variant bg-surface-container-low hidden">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="font-body-lg text-lg font-bold text-primary">Total:</span>
+                    <span id="cart-total" class="font-display text-2xl font-bold text-primary">$0</span>
+                </div>
+                
+                <!-- Simple Checkout Form -->
+                <div class="space-y-4 mb-6">
+                    <div>
+                        <label for="checkout-name" class="block text-xs font-semibold text-primary uppercase tracking-wider mb-1">Nombre Completo *</label>
+                        <input type="text" id="checkout-name" required class="w-full bg-surface border border-outline-variant/60 rounded px-4 py-2.5 text-sm focus:ring-1 focus:ring-secondary focus:border-secondary outline-none transition-all" placeholder="Ej. Bautista Pérez">
+                    </div>
+                    <div>
+                        <label for="checkout-address" class="block text-xs font-semibold text-primary uppercase tracking-wider mb-1">Dirección de Envío / Localidad *</label>
+                        <input type="text" id="checkout-address" required class="w-full bg-surface border border-outline-variant/60 rounded px-4 py-2.5 text-sm focus:ring-1 focus:ring-secondary focus:border-secondary outline-none transition-all" placeholder="Ej. Av. Libertador 1234, San Juan">
+                    </div>
+                </div>
+
+                <button class="bg-secondary text-white px-8 py-4 rounded font-label-md text-sm hover:bg-on-secondary-container transition-all w-full uppercase tracking-widest font-bold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 duration-300" id="checkout-btn">
+                    <span class="material-symbols-outlined">send</span> Finalizar Compra por WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section class="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-1000" style="background-image: url('images/hero_bg.jpg');"></div>
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-primary/20 backdrop-blur-[1px]"></div>
+            <div class="relative z-10 text-center max-w-4xl px-margin-mobile mx-auto flex flex-col items-center">
+                <span class="font-label-md text-xs sm:text-sm uppercase tracking-widest text-primary-fixed mb-4 bg-primary/60 px-4 py-1.5 rounded-full backdrop-blur-md">Artesanal & Exclusivo</span>
+                <h1 class="font-headline-lg text-4xl sm:text-5xl md:text-6xl text-white mb-6 drop-shadow-md leading-tight text-shadow">
+                    Cuadros que inspiran y transforman tu hogar
+                </h1>
+                <p class="font-body-lg text-lg sm:text-xl text-white/95 mb-10 max-w-2xl font-light drop-shadow-xs">
+                    Marcos de madera 100% artesanales y láminas exclusivas diseñadas para crear espacios de calma, serenidad y quiet luxury.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <a href="#productos" class="bg-primary text-white hover:bg-secondary px-10 py-4 rounded font-label-md text-sm border border-primary hover:border-secondary transition-all text-center uppercase tracking-widest font-bold shadow-lg hover:-translate-y-0.5 duration-300">
+                        Ver Colección
+                    </a>
+                    <a href="#personalizados" class="bg-white/90 text-primary hover:bg-primary hover:text-white px-10 py-4 rounded font-label-md text-sm border border-white hover:border-primary transition-all text-center uppercase tracking-widest font-bold shadow-lg hover:-translate-y-0.5 duration-300 backdrop-blur-md">
+                        Personalizá tu Cuadro
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Bar -->
+        <section class="bg-surface-container-low py-12 border-b border-outline-variant/30">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+                    <div class="flex items-center gap-4 p-4 rounded-lg bg-surface/50 border border-outline-variant/10">
+                        <span class="material-symbols-outlined text-secondary text-4xl flex-shrink-0" style='font-variation-settings: "FILL" 0;'>local_shipping</span>
+                        <div>
+                            <h4 class="font-label-md text-sm text-primary uppercase tracking-wider font-bold">Envío Nacional</h4>
+                            <p class="text-xs text-on-surface-variant">Llegamos a todo el país seguro</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 rounded-lg bg-surface/50 border border-outline-variant/10">
+                        <span class="material-symbols-outlined text-secondary text-4xl flex-shrink-0" style='font-variation-settings: "FILL" 0;'>carpenter</span>
+                        <div>
+                            <h4 class="font-label-md text-sm text-primary uppercase tracking-wider font-bold">Marcos Artesanales</h4>
+                            <p class="text-xs text-on-surface-variant">Madera maciza seleccionada</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 rounded-lg bg-surface/50 border border-outline-variant/10">
+                        <span class="material-symbols-outlined text-secondary text-4xl flex-shrink-0" style='font-variation-settings: "FILL" 0;'>credit_card</span>
+                        <div>
+                            <h4 class="font-label-md text-sm text-primary uppercase tracking-wider font-bold">Financiación</h4>
+                            <p class="text-xs text-on-surface-variant">Cuotas y medios de pago variados</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 rounded-lg bg-surface/50 border border-outline-variant/10">
+                        <span class="material-symbols-outlined text-secondary text-4xl flex-shrink-0" style='font-variation-settings: "FILL" 0;'>add_photo_alternate</span>
+                        <div>
+                            <h4 class="font-label-md text-sm text-primary uppercase tracking-wider font-bold">Customización</h4>
+                            <p class="text-xs text-on-surface-variant">Enmarcado a tu medida exacta</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="py-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-semibold text-secondary uppercase tracking-widest">Inspiración</span>
+                <h2 class="font-headline-md text-3xl sm:text-4xl text-primary mt-2 font-semibold">Nuestras Categorías</h2>
+                <div class="w-16 h-0.5 bg-secondary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Category 1 -->
+                <a class="category-card group relative block overflow-hidden aspect-[4/5] card-lift rounded-xl" href="#productos" onclick="filterCategory('deportes')">
+                    <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Deportes" src="images/print_surf.jpg"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/30 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <span class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-1 block">Acción & Mar</span>
+                        <h3 class="font-headline-md text-2xl text-white mb-2">Deportes</h3>
+                        <span class="font-label-md text-xs text-white/80 flex items-center gap-2 group-hover:gap-4 transition-all">Explorar Colección <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                    </div>
+                </a>
+                <!-- Category 2 -->
+                <a class="category-card group relative block overflow-hidden aspect-[4/5] card-lift rounded-xl" href="#productos" onclick="filterCategory('musica')">
+                    <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Música" src="images/print_music.jpg"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/30 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <span class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-1 block">Armonía & Ritmo</span>
+                        <h3 class="font-headline-md text-2xl text-white mb-2">Música</h3>
+                        <span class="font-label-md text-xs text-white/80 flex items-center gap-2 group-hover:gap-4 transition-all">Explorar Colección <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                    </div>
+                </a>
+                <!-- Category 3 -->
+                <a class="category-card group relative block overflow-hidden aspect-[4/5] card-lift rounded-xl" href="#productos" onclick="filterCategory('naturaleza')">
+                    <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Naturaleza" src="images/print_nature.jpg"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/30 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <span class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-1 block">Orgánico & Calma</span>
+                        <h3 class="font-headline-md text-2xl text-white mb-2">Naturaleza</h3>
+                        <span class="font-label-md text-xs text-white/80 flex items-center gap-2 group-hover:gap-4 transition-all">Explorar Colección <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Product Gallery (Catalog) Section -->
+        <section id="productos" class="py-24 border-t border-outline-variant/20 bg-surface-container-low">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-semibold text-secondary uppercase tracking-widest">Catálogo</span>
+                    <h2 class="font-headline-md text-3xl sm:text-4xl text-primary mt-2 font-semibold">Gama Seleccionada</h2>
+                    <p class="text-sm text-on-surface-variant mt-2 font-light">Elegí la lámina que resuene con vos. Enmarcada a mano en nuestro taller.</p>
+                </div>
+
+                <!-- Interactive Filters -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12" id="filter-tabs">
+                    <button onclick="filterCategory('todos')" class="filter-tab-btn active px-6 py-2.5 rounded-full font-label-md text-xs uppercase tracking-wider font-semibold border border-primary bg-primary text-white transition-all shadow-sm" data-category="todos">
+                        Todos
+                    </button>
+                    <button onclick="filterCategory('deportes')" class="filter-tab-btn px-6 py-2.5 rounded-full font-label-md text-xs uppercase tracking-wider font-semibold border border-outline-variant bg-white text-primary hover:border-primary transition-all shadow-sm" data-category="deportes">
+                        Deportes
+                    </button>
+                    <button onclick="filterCategory('musica')" class="filter-tab-btn px-6 py-2.5 rounded-full font-label-md text-xs uppercase tracking-wider font-semibold border border-outline-variant bg-white text-primary hover:border-primary transition-all shadow-sm" data-category="musica">
+                        Música
+                    </button>
+                    <button onclick="filterCategory('naturaleza')" class="filter-tab-btn px-6 py-2.5 rounded-full font-label-md text-xs uppercase tracking-wider font-semibold border border-outline-variant bg-white text-primary hover:border-primary transition-all shadow-sm" data-category="naturaleza">
+                        Naturaleza
+                    </button>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="product-grid">
+                    <!-- Products will be dynamically generated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Product Detail Modal -->
+        <div id="product-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden px-4">
+            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="modal-backdrop"></div>
+            <div class="glassmorphic rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl relative z-10 flex flex-col md:flex-row transform transition-all duration-300 scale-95 opacity-0">
+                <!-- Close Button -->
+                <button class="absolute top-4 right-4 text-primary hover:text-secondary transition-colors z-20" id="close-modal">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+                
+                <!-- Modal Image (Left) -->
+                <div class="w-full md:w-1/2 p-6 md:p-8 flex items-center justify-center bg-white/20">
+                    <div id="modal-frame-preview" class="border-[12px] frame-oak transition-all duration-300 w-full aspect-[3/4] flex items-center justify-center overflow-hidden mat-border relative bg-[#faf8f6] p-6 shadow-lg">
+                        <img id="modal-img" src="" alt="Vista previa del producto" class="w-full h-full object-cover shadow-inner">
+                        <div class="absolute inset-0 reflection-layer"></div>
+                    </div>
+                </div>
+                
+                <!-- Modal Info (Right) -->
+                <div class="w-full md:w-1/2 p-8 flex flex-col justify-between">
+                    <div>
+                        <span id="modal-category" class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-1 block">CATEGORÍA</span>
+                        <h3 id="modal-title" class="font-headline-md text-2xl text-primary mb-3">Título del Cuadro</h3>
+                        <p id="modal-desc" class="text-sm text-on-surface-variant font-light mb-6">Descripción detallada del cuadro y la calidad del enmarcado artesanal.</p>
+                        
+                        <!-- Options Selection -->
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <label class="block text-xs font-semibold text-primary uppercase tracking-wider mb-2">Medidas de la lámina</label>
+                                <select id="modal-size-select" class="w-full bg-white border border-outline-variant/60 rounded px-4 py-2.5 text-sm focus:ring-1 focus:ring-secondary focus:border-secondary outline-none transition-all">
+                                    <option value="30x40" data-price="0">Chico (30x40 cm)</option>
+                                    <option value="50x70" data-price="5000" selected>Mediano (50x70 cm) [+ $5.000]</option>
+                                    <option value="70x100" data-price="12000">Grande (70x100 cm) [+ $12.000]</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-primary uppercase tracking-wider mb-2">Tipo de marco (Madera Chata)</label>
+                                <div class="grid grid-cols-3 gap-2" id="modal-frame-options">
+                                    <button onclick="selectModalFrame('oak')" class="frame-opt-btn active border-2 border-secondary bg-white rounded p-2 text-center text-xs font-bold text-primary transition-all" data-frame="oak">
+                                        Roble
+                                    </button>
+                                    <button onclick="selectModalFrame('black')" class="frame-opt-btn border-2 border-outline-variant/60 bg-white rounded p-2 text-center text-xs font-bold text-primary transition-all" data-frame="black">
+                                        Negro
+                                    </button>
+                                    <button onclick="selectModalFrame('white')" class="frame-opt-btn border-2 border-outline-variant/60 bg-white rounded p-2 text-center text-xs font-bold text-primary transition-all" data-frame="white">
+                                        Blanco
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <!-- Price and CTA -->
+                        <div class="flex justify-between items-end mb-6">
+                            <div>
+                                <span class="text-xs text-on-surface-variant block mb-1">Precio total estimado</span>
+                                <span id="modal-price" class="font-display text-3xl font-bold text-primary">$18.500</span>
+                            </div>
+                        </div>
+                        <button id="modal-add-to-cart" class="bg-primary text-white hover:bg-secondary px-8 py-4 rounded font-label-md text-sm border border-primary hover:border-secondary transition-all w-full uppercase tracking-widest font-bold flex items-center justify-center gap-2 shadow-lg">
+                            <span class="material-symbols-outlined">add_shopping_cart</span> Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Frame Designer Section (Personalizados) -->
+        <section id="personalizados" class="py-24 border-t border-outline-variant/20 bg-background">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-xs font-semibold text-secondary uppercase tracking-widest">Simulador</span>
+                    <h2 class="font-headline-md text-3xl sm:text-4xl text-primary mt-2 font-semibold">Diseñá a Medida</h2>
+                    <p class="text-sm text-on-surface-variant mt-2 font-light">Subí tu foto o ilustración, seleccioná las dimensiones y el marco ideal. Mirá la vista previa en tiempo real.</p>
+                </div>
+
+                <div class="flex flex-col lg:flex-row gap-12 items-stretch">
+                    <!-- Interactive Visual Preview (Left) -->
+                    <div class="w-full lg:w-1/2 flex items-center justify-center p-8 rounded-2xl bg-surface-container shadow-inner border border-outline-variant/30 relative overflow-hidden min-h-[450px]">
+                        <!-- Ambient room background simulator grid -->
+                        <div class="absolute inset-0 opacity-15" style="background-image: radial-gradient(circle, #73777e 1.5px, transparent 1.5px); background-size: 24px 24px;"></div>
+                        
+                        <!-- Dynamic Framed Image Container -->
+                        <div id="custom-preview-frame" class="border-[16px] frame-oak transition-all duration-300 max-w-[85%] w-[320px] aspect-[3/4] flex items-center justify-center overflow-hidden mat-border relative bg-[#faf8f6] p-6 shadow-2xl z-10">
+                            <!-- Reflection Glass Effect -->
+                            <div class="absolute inset-0 reflection-layer z-20"></div>
+                            
+                            <!-- Custom Uploaded or Selected Image -->
+                            <div id="custom-image-wrapper" class="w-full h-full shadow-inner overflow-hidden flex items-center justify-center bg-surface-container">
+                                <img id="custom-preview-img" src="images/print_nature.jpg" alt="Lámina de muestra" class="w-full h-full object-cover">
+                                <div id="custom-placeholder" class="hidden flex-col items-center gap-2 text-outline">
+                                    <span class="material-symbols-outlined text-5xl">image</span>
+                                    <span class="text-[10px] font-semibold uppercase tracking-wider">Subí tu foto</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Customizer Controls (Right) -->
+                    <div class="w-full lg:w-1/2 flex flex-col justify-between glassmorphic rounded-2xl p-8 border border-outline-variant/30 shadow-md">
+                        <div class="space-y-6">
+                            <!-- Step 1: Upload Image -->
+                            <div>
+                                <h3 class="text-sm font-bold text-primary uppercase tracking-widest mb-3 flex items-center gap-2">
+                                    <span class="bg-secondary text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">1</span>
+                                    Subí tu Archivo / Obra
+                                </h3>
+                                <div class="flex items-center gap-4">
+                                    <label class="flex-1 flex flex-col items-center justify-center bg-white hover:bg-surface border border-dashed border-outline-variant/80 hover:border-secondary rounded-lg p-5 cursor-pointer transition-all duration-300">
+                                        <span class="material-symbols-outlined text-3xl text-secondary mb-1">upload_file</span>
+                                        <span class="text-xs font-semibold text-primary">Cargar Imagen</span>
+                                        <span class="text-[10px] text-on-surface-variant font-light mt-0.5">JPG, PNG (Máx 5MB)</span>
+                                        <input type="file" id="custom-image-input" accept="image/*" class="hidden">
+                                    </label>
+                                    <div class="text-xs text-on-surface-variant font-medium">o</div>
+                                    <button onclick="setSampleImage()" class="flex-1 border border-outline-variant bg-white hover:bg-surface text-primary rounded-lg p-5 text-center transition-all flex flex-col items-center justify-center gap-1">
+                                        <span class="material-symbols-outlined text-3xl text-secondary">collections</span>
+                                        <span class="text-xs font-semibold">Usar Lámina de Muestra</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Step 2: Choose Frame -->
+                            <div>
+                                <h3 class="text-sm font-bold text-primary uppercase tracking-widest mb-3 flex items-center gap-2">
+                                    <span class="bg-secondary text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">2</span>
+                                    Tipo de Marco
+                                </h3>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <button onclick="selectCustomFrame('oak')" class="custom-frame-btn active border-2 border-secondary bg-white rounded-lg p-3 text-center text-xs font-bold text-primary transition-all flex flex-col items-center gap-1.5" data-frame="oak">
+                                        <span class="w-6 h-6 rounded-full bg-[#dcb382] border border-black/10"></span>
+                                        Roble Natural
+                                    </button>
+                                    <button onclick="selectCustomFrame('black')" class="custom-frame-btn border border-outline-variant bg-white hover:border-primary rounded-lg p-3 text-center text-xs font-bold text-primary transition-all flex flex-col items-center gap-1.5" data-frame="black">
+                                        <span class="w-6 h-6 rounded-full bg-[#1a1a1a] border border-black/10"></span>
+                                        Negro Abisal
+                                    </button>
+                                    <button onclick="selectCustomFrame('white')" class="custom-frame-btn border border-outline-variant bg-white hover:border-primary rounded-lg p-3 text-center text-xs font-bold text-primary transition-all flex flex-col items-center gap-1.5" data-frame="white">
+                                        <span class="w-6 h-6 rounded-full bg-[#f7f7f7] border border-black/10"></span>
+                                        Blanco Glaciar
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Choose Size -->
+                            <div>
+                                <h3 class="text-sm font-bold text-primary uppercase tracking-widest mb-3 flex items-center gap-2">
+                                    <span class="bg-secondary text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">3</span>
+                                    Medidas (Lámina)
+                                </h3>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <button onclick="selectCustomSize('30x40', 10500)" class="custom-size-btn border border-outline-variant bg-white hover:border-primary rounded-lg p-3 text-center text-xs font-bold text-primary transition-all" data-size="30x40">
+                                        30x40 cm
+                                        <span class="block text-[9px] font-normal text-on-surface-variant mt-1">$10.500</span>
+                                    </button>
+                                    <button onclick="selectCustomSize('50x70', 15800)" class="custom-size-btn active border-2 border-secondary bg-white rounded-lg p-3 text-center text-xs font-bold text-primary transition-all" data-size="50x70">
+                                        50x70 cm
+                                        <span class="block text-[9px] font-normal text-on-surface-variant mt-1">$15.800</span>
+                                    </button>
+                                    <button onclick="selectCustomSize('70x100', 23400)" class="custom-size-btn border border-outline-variant bg-white hover:border-primary rounded-lg p-3 text-center text-xs font-bold text-primary transition-all" data-size="70x100">
+                                        70x100 cm
+                                        <span class="block text-[9px] font-normal text-on-surface-variant mt-1">$23.400</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Step 4: Paspartú (Matting) -->
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <h3 class="text-sm font-bold text-primary uppercase tracking-widest flex items-center gap-2">
+                                        <span class="bg-secondary text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">4</span>
+                                        Paspartú (Passepartout)
+                                    </h3>
+                                    <span id="paspartu-val-label" class="text-xs font-bold text-secondary">5 cm</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-xs text-on-surface-variant">Ninguno</span>
+                                    <input type="range" id="custom-mat-range" min="0" max="8" step="1" value="5" class="flex-1 accent-secondary bg-outline-variant rounded-lg appearance-none h-1.5 cursor-pointer">
+                                    <span class="text-xs text-on-surface-variant">8 cm</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Price and Add to Cart -->
+                        <div class="mt-8 border-t border-outline-variant/30 pt-6">
+                            <div class="flex justify-between items-end mb-6">
+                                <div>
+                                    <span class="text-xs text-on-surface-variant block mb-1">Precio total estimado</span>
+                                    <span id="custom-total-price" class="font-display text-3xl font-bold text-primary">$21.800</span>
+                                </div>
+                            </div>
+                            <button id="custom-add-to-cart" class="bg-secondary text-white hover:bg-on-secondary-container px-8 py-4 rounded font-label-md text-sm border border-secondary hover:border-on-secondary-container transition-all w-full uppercase tracking-widest font-bold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 duration-300">
+                                <span class="material-symbols-outlined">add_shopping_cart</span> Añadir al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contacto" class="py-24 border-t border-outline-variant/20 bg-surface-container-low">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-xs font-semibold text-secondary uppercase tracking-widest">Contacto</span>
+                    <h2 class="font-headline-md text-3xl sm:text-4xl text-primary mt-2 font-semibold">Hablemos de tus paredes</h2>
+                    <div class="w-16 h-0.5 bg-secondary mx-auto mt-4"></div>
+                </div>
+
+                <div class="flex flex-col lg:flex-row gap-12 items-stretch">
+                    <!-- Contact Info (Left) -->
+                    <div class="w-full lg:w-1/3 flex flex-col justify-between p-8 rounded-2xl glassmorphic border border-white/40 shadow-md">
+                        <div class="space-y-8">
+                            <h3 class="font-display text-2xl font-bold text-primary">decorhouse</h3>
+                            <p class="text-sm text-on-surface-variant font-light leading-relaxed">
+                                Ofrecemos marcos y asesoramiento de enmarcado premium. Si tenés una consulta específica sobre un pedido, querés un presupuesto personalizado de marcos para tu local, o buscás medidas especiales, contactanos directamente.
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-4 text-primary">
+                                    <span class="material-symbols-outlined text-secondary">phone_iphone</span>
+                                    <a href="https://wa.me/542646124958" class="text-sm font-semibold hover:text-secondary transition-colors" target="_blank">+54 2646124958</a>
+                                </div>
+                                <div class="flex items-center gap-4 text-primary">
+                                    <span class="material-symbols-outlined text-secondary">mail</span>
+                                    <span class="text-sm font-semibold">hola@decorhouse.com.ar</span>
+                                </div>
+                                <div class="flex items-center gap-4 text-primary">
+                                    <span class="material-symbols-outlined text-secondary">pin_drop</span>
+                                    <span class="text-sm font-semibold">San Juan, Argentina</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 border-t border-outline-variant/30 pt-6">
+                            <a href="https://wa.me/542646124958" target="_blank" class="flex items-center justify-center gap-2 border border-secondary text-secondary hover:bg-secondary hover:text-white rounded-lg py-3 text-sm font-bold transition-all uppercase tracking-widest">
+                                <span class="material-symbols-outlined text-xl">chat</span> Chatear por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form (Right) -->
+                    <div class="w-full lg:w-2/3 p-8 rounded-2xl glassmorphic border border-white/40 shadow-md">
+                        <form id="contact-form" class="space-y-6" onsubmit="handleContactSubmit(event)">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="contact-name" class="block text-xs font-semibold text-primary uppercase tracking-wider mb-2">Nombre Completo</label>
+                                    <input type="text" id="contact-name" required class="w-full bg-white border border-outline-variant/60 rounded-lg px-4 py-3 text-sm focus:ring-1 focus:ring-secondary focus:border-secondary outline-none transition-all" placeholder="Ej. Bautista">
+                                </div>
+                                <div>
+                                    <label for="contact-phone" class="block text-xs font-semibold text-primary uppercase tracking-wider mb-2">WhatsApp / Teléfono</label>
+                                    <input type="tel" id="contact-phone" required class="w-full bg-white border border-outline-variant/60 rounded-lg px-4 py-3 text-sm focus:ring-1 focus:ring-secondary focus:border-secondary outline-none transition-all" placeholder="Ej. +54 264...">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="contact-message" class="block text-xs font-semibold text-primary uppercase tracking-wider mb-2">Contanos tu idea o consulta</label>
+                                <textarea id="contact-message" rows="5" required class="w-full bg-white border border-outline-variant/60 rounded-lg px-4 py-3 text-sm focus:ring-1 focus:ring-secondary focus:border-secondary outline-none transition-all resize-none" placeholder="Ej. Quisiera encargar 3 marcos en madera natural de medida..."></textarea>
+                            </div>
+                            <button type="submit" class="bg-primary text-white hover:bg-secondary px-8 py-4 rounded-lg font-label-md text-sm border border-primary hover:border-secondary transition-all w-full uppercase tracking-widest font-bold flex items-center justify-center gap-2 shadow-lg">
+                                <span class="material-symbols-outlined text-xl">send</span> Enviar consulta por WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-on-primary w-full border-t border-outline-variant/30">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="col-span-1">
+                    <span class="font-display text-3xl font-bold text-white block mb-6">decorhouse</span>
+                    <p class="font-body-md text-sm text-on-primary-container leading-relaxed">
+                        Taller artesanal de cuadros y marcos a medida. Diseños exclusivos impresos en papel fine art de alto gramaje.
+                    </p>
+                </div>
+                <div class="col-span-1">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-secondary-fixed mb-6">Enlaces Rápidos</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#inicio" class="text-on-primary-container hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="#productos" class="text-on-primary-container hover:text-white transition-colors">Catálogo de Obras</a></li>
+                        <li><a href="#personalizados" class="text-on-primary-container hover:text-white transition-colors">Cuadros Personalizados</a></li>
+                        <li><a href="#contacto" class="text-on-primary-container hover:text-white transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-1">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-secondary-fixed mb-6">Categorías</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#productos" onclick="filterCategory('deportes')" class="text-on-primary-container hover:text-white transition-colors">Deportes</a></li>
+                        <li><a href="#productos" onclick="filterCategory('musica')" class="text-on-primary-container hover:text-white transition-colors">Música</a></li>
+                        <li><a href="#productos" onclick="filterCategory('naturaleza')" class="text-on-primary-container hover:text-white transition-colors">Naturaleza</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-1">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-secondary-fixed mb-6">Ubicación y Envíos</h4>
+                    <p class="text-sm text-on-primary-container leading-relaxed mb-4">
+                        Taller y depósito central en San Juan, Argentina.<br>
+                        Envíos rápidos a todo el país a través de Andreani o Correo Argentino.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-16 pt-8 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-xs text-on-primary-container">
+                    © 2026 decorhouse. Todos los derechos reservados. Handcrafted with soul.
+                </p>
+                <div class="flex gap-8 text-xs text-on-primary-container">
+                    <a href="#" class="hover:text-white transition-colors underline">Términos y Condiciones</a>
+                    <a href="#" class="hover:text-white transition-colors underline">Políticas de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notifications for adding items -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 glassmorphic text-primary px-6 py-4 rounded-xl shadow-xl flex items-center gap-3 border border-secondary/30 transform translate-y-20 opacity-0 transition-all duration-500 ease-out pointer-events-none">
+        <span class="material-symbols-outlined text-secondary text-2xl">check_circle</span>
+        <div class="text-xs font-bold uppercase tracking-wider" id="toast-message">¡Producto añadido al carrito!</div>
+    </div>
+
+    <!-- JavaScript logic -->
+    <script>
+        // Data Store
+        const PRODUCTS_DATA = [
+            {
+                id: "prod-1",
+                name: "Olas Infinitas",
+                category: "deportes",
+                basePrice: 13500,
+                image: "images/print_surf.jpg",
+                desc: "Fotografía fine art minimalista que captura la fuerza y quietud de un surfista enfrentando la ola perfecta. Excelente para ambientes modernos y deportivos."
+            },
+            {
+                id: "prod-2",
+                name: "Sintonía Marina",
+                category: "musica",
+                basePrice: 14200,
+                image: "images/print_music.jpg",
+                desc: "Ilustración artística y abstracta donde se fusionan las curvas sinuosas de las ondas musicales con la fuerza rítmica de la marea."
+            },
+            {
+                id: "prod-3",
+                name: "Santuario de Coral",
+                category: "naturaleza",
+                basePrice: 12800,
+                image: "images/print_nature.jpg",
+                desc: "Estudio botánico detallado de algas y corales en sutiles combinaciones de azul cobalto, turquesa y marino. Aporta calma natural a cualquier espacio."
+            },
+            {
+                id: "prod-4",
+                name: "Atardecer de Surfistas",
+                category: "deportes",
+                basePrice: 13900,
+                image: "images/print_surf.jpg",
+                desc: "Una perspectiva elegante de la costa, ideal para evocar el espíritu del océano y la adrenalina sutil de las olas en la hora dorada."
+            },
+            {
+                id: "prod-5",
+                name: "Acorde Oceánico",
+                category: "musica",
+                basePrice: 14500,
+                image: "images/print_music.jpg",
+                desc: "Composición abstracta en lienzo que representa la musicalidad de la costa y el rumor del oleaje a través de texturas visuales profundas."
+            },
+            {
+                id: "prod-6",
+                name: "Ecosistemas de Mar",
+                category: "naturaleza",
+                basePrice: 13200,
+                image: "images/print_nature.jpg",
+                desc: "Diseño elegante inspirado en las constelaciones marinas y las ramificaciones orgánicas de la flora subacuática."
+            }
+        ];
+
+        // Frame Pricing configuration
+        const PRICING = {
+            sizes: {
+                "30x40": 0,
+                "50x70": 5000,
+                "70x100": 12000
+            },
+            frames: {
+                "oak": 5000,
+                "black": 3500,
+                "white": 3500
+            },
+            matting: 2500 // fixed extra if matting is used in catalog, or calculated in customizer
+        };
+
+        // App States
+        let cart = [];
+        let currentSelectedCategory = 'todos';
+        let customizerState = {
+            image: "images/print_nature.jpg",
+            imageName: "Lámina de Muestra",
+            frame: "oak",
+            size: "50x70",
+            matSize: 5, // cm
+            basePrice: 15800
+        };
+        let modalState = {
+            productId: null,
+            frame: "oak",
+            size: "50x70"
+        };
+
+        // DOM Elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const navMenuBtn = document.getElementById('nav-menu-btn');
+            const cartBtn = document.getElementById('cart-btn');
+            const navDrawer = document.getElementById('nav-drawer');
+            const cartDrawer = document.getElementById('cart-drawer');
+            const navBackdrop = document.getElementById('nav-backdrop');
+            const cartBackdrop = document.getElementById('cart-backdrop');
+            const closeNavBtn = document.getElementById('close-nav');
+            const closeCartBtn = document.getElementById('close-cart');
+            const continueShoppingBtn = document.getElementById('continue-shopping');
+            
+            // Drawer Handlers
+            function openDrawer(drawer, backdrop) {
+                drawer.classList.remove('hidden');
+                setTimeout(() => {
+                    drawer.classList.remove('opacity-0');
+                    drawer.querySelector('.drawer-content').classList.remove('-translate-x-full', 'translate-x-full');
+                }, 10);
+            }
+
+            function closeDrawer(drawer, backdrop, direction) {
+                drawer.querySelector('.drawer-content').classList.add(direction);
+                drawer.classList.add('opacity-0');
+                setTimeout(() => {
+                    drawer.classList.add('hidden');
+                }, 300);
+            }
+
+            navMenuBtn.addEventListener('click', () => openDrawer(navDrawer, navBackdrop));
+            closeNavBtn.addEventListener('click', () => closeDrawer(navDrawer, navBackdrop, '-translate-x-full'));
+            navBackdrop.addEventListener('click', () => closeDrawer(navDrawer, navBackdrop, '-translate-x-full'));
+
+            cartBtn.addEventListener('click', () => {
+                renderCart();
+                openDrawer(cartDrawer, cartBackdrop);
+            });
+            closeCartBtn.addEventListener('click', () => closeDrawer(cartDrawer, cartBackdrop, 'translate-x-full'));
+            cartBackdrop.addEventListener('click', () => closeDrawer(cartDrawer, cartBackdrop, 'translate-x-full'));
+            continueShoppingBtn.addEventListener('click', () => closeDrawer(cartDrawer, cartBackdrop, 'translate-x-full'));
+
+            // Load Cart from localStorage
+            if (localStorage.getItem('decorhouse_cart')) {
+                try {
+                    cart = JSON.parse(localStorage.getItem('decorhouse_cart'));
+                    updateCartCount();
+                } catch(e) {
+                    cart = [];
+                }
+            }
+
+            // Initialize Grid
+            renderProductGrid();
+
+            // Setup Customizer Listeners
+            setupCustomizer();
+
+            // Setup Modal Listeners
+            setupModal();
+
+            // Smooth Scroll Drawer Links
+            document.querySelectorAll('#nav-drawer nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    closeDrawer(navDrawer, navBackdrop, '-translate-x-full');
+                });
+            });
+        });
+
+        // Toast Trigger
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').innerText = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Render Product Grid
+        function renderProductGrid() {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+            
+            const filtered = currentSelectedCategory === 'todos' 
+                ? PRODUCTS_DATA 
+                : PRODUCTS_DATA.filter(p => p.category === currentSelectedCategory);
+
+            filtered.forEach(p => {
+                const card = document.createElement('div');
+                card.className = "glassmorphic rounded-2xl overflow-hidden card-lift border border-outline-variant/30 flex flex-col justify-between";
+                
+                const frameClass = "frame-oak";
+                const price = p.basePrice + PRICING.sizes["50x70"] + PRICING.frames["oak"]; // default combination
+
+                card.innerHTML = `
+                    <div class="p-6 bg-white/20 flex items-center justify-center cursor-pointer" onclick="openProductModal('${p.id}')">
+                        <div class="border-[8px] ${frameClass} w-full aspect-[3/4] flex items-center justify-center overflow-hidden mat-border relative bg-[#faf8f6] p-4 shadow-md">
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover shadow-inner transition-transform duration-700 hover:scale-105">
+                            <div class="absolute inset-0 reflection-layer"></div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-1">
+                        <div>
+                            <span class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-1 block">${p.category}</span>
+                            <h3 class="font-headline-md text-lg text-primary mb-2 font-bold hover:text-secondary cursor-pointer" onclick="openProductModal('${p.id}')">${p.name}</h3>
+                            <p class="text-xs text-on-surface-variant font-light line-clamp-2 mb-4">${p.desc}</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-outline-variant/20 flex items-center justify-between">
+                            <div class="flex flex-col">
+                                <span class="text-[9px] text-on-surface-variant uppercase tracking-wider font-semibold">Enmarcado (50x70 cm)</span>
+                                <span class="font-display text-lg font-bold text-primary">$${price.toLocaleString('es-AR')}</span>
+                            </div>
+                            <button onclick="openProductModal('${p.id}')" class="text-xs font-bold uppercase tracking-wider border border-secondary text-secondary hover:bg-secondary hover:text-white px-4 py-2 rounded transition-all duration-300 flex items-center gap-1">
+                                <span class="material-symbols-outlined text-sm">visibility</span> Configurar
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Filter tabs click action
+        function filterCategory(category) {
+            currentSelectedCategory = category;
+            
+            // Update UI tabs
+            const tabs = document.querySelectorAll('#filter-tabs button');
+            tabs.forEach(tab => {
+                if (tab.getAttribute('data-category') === category) {
+                    tab.className = "filter-tab-btn active px-6 py-2.5 rounded-full font-label-md text-xs uppercase tracking-wider font-semibold border border-primary bg-primary text-white transition-all shadow-sm";
+                } else {
+                    tab.className = "filter-tab-btn px-6 py-2.5 rounded-full font-label-md text-xs uppercase tracking-wider font-semibold border border-outline-variant bg-white text-primary hover:border-primary transition-all shadow-sm";
+                }
+            });
+            
+            renderProductGrid();
+        }
+
+        // Modal Functionality
+        function setupModal() {
+            const modal = document.getElementById('product-modal');
+            const closeModalBtn = document.getElementById('close-modal');
+            const backdrop = document.getElementById('modal-backdrop');
+            const sizeSelect = document.getElementById('modal-size-select');
+            const addToCartBtn = document.getElementById('modal-add-to-cart');
+
+            function closeModal() {
+                const modalContent = modal.querySelector('.glassmorphic');
+                modalContent.classList.add('scale-95', 'opacity-0');
+                modal.classList.add('opacity-0');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            }
+
+            closeModalBtn.addEventListener('click', closeModal);
+            backdrop.addEventListener('click', closeModal);
+            
+            sizeSelect.addEventListener('change', () => {
+                modalState.size = sizeSelect.value;
+                updateModalPricing();
+            });
+
+            addToCartBtn.addEventListener('click', () => {
+                const product = PRODUCTS_DATA.find(p => p.id === modalState.productId);
+                if (product) {
+                    const price = calculateProductPrice(product.basePrice, modalState.size, modalState.frame);
+                    const sizeLabel = modalState.size === "30x40" ? "Chico (30x40 cm)" : (modalState.size === "50x70" ? "Mediano (50x70 cm)" : "Grande (70x100 cm)");
+                    const frameLabel = modalState.frame === "oak" ? "Roble Natural" : (modalState.frame === "black" ? "Negro Abisal" : "Blanco Glaciar");
+                    
+                    const cartItem = {
+                        id: `prod-${product.id}-${modalState.size}-${modalState.frame}-${Date.now()}`,
+                        name: product.name,
+                        price: price,
+                        image: product.image,
+                        size: sizeLabel,
+                        frame: frameLabel,
+                        matSize: "5 cm", // default matting
+                        quantity: 1,
+                        type: "standard"
+                    };
+                    
+                    addToCart(cartItem);
+                    closeModal();
+                    showToast(`¡${product.name} añadido al carrito!`);
+                }
+            });
+        }
+
+        function openProductModal(productId) {
+            const product = PRODUCTS_DATA.find(p => p.id === productId);
+            if (!product) return;
+
+            modalState.productId = productId;
+            modalState.frame = "oak"; // reset default
+            modalState.size = "50x70"; // reset default
+
+            // Update DOM inside Modal
+            document.getElementById('modal-title').innerText = product.name;
+            document.getElementById('modal-desc').innerText = product.desc;
+            document.getElementById('modal-category').innerText = product.category;
+            document.getElementById('modal-img').src = product.image;
+            document.getElementById('modal-size-select').value = "50x70";
+
+            // Update frame visual option states
+            selectModalFrame('oak');
+            updateModalPricing();
+
+            // Show Modal with transition
+            const modal = document.getElementById('product-modal');
+            const modalContent = modal.querySelector('.glassmorphic');
+            
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95', 'opacity-0');
+            }, 10);
+        }
+
+        function selectModalFrame(frameKey) {
+            modalState.frame = frameKey;
+            
+            // Visual Active States
+            const btns = document.querySelectorAll('#modal-frame-options button');
+            btns.forEach(btn => {
+                if (btn.getAttribute('data-frame') === frameKey) {
+                    btn.className = "frame-opt-btn active border-2 border-secondary bg-white rounded p-2 text-center text-xs font-bold text-primary transition-all";
+                } else {
+                    btn.className = "frame-opt-btn border-2 border-outline-variant/60 bg-white rounded p-2 text-center text-xs font-bold text-primary transition-all";
+                }
+            });
+
+            // Update visual preview frame color
+            const preview = document.getElementById('modal-frame-preview');
+            preview.className = `border-[12px] frame-${frameKey} transition-all duration-300 w-full aspect-[3/4] flex items-center justify-center overflow-hidden mat-border relative bg-[#faf8f6] p-6 shadow-lg`;
+
+            updateModalPricing();
+        }
+
+        function updateModalPricing() {
+            const product = PRODUCTS_DATA.find(p => p.id === modalState.productId);
+            if (!product) return;
+
+            const finalPrice = calculateProductPrice(product.basePrice, modalState.size, modalState.frame);
+            document.getElementById('modal-price').innerText = `$${finalPrice.toLocaleString('es-AR')}`;
+        }
+
+        function calculateProductPrice(base, sizeKey, frameKey) {
+            let total = base;
+            total += PRICING.sizes[sizeKey];
+            total += PRICING.frames[frameKey];
+            total += PRICING.matting;
+            return total;
+        }
+
+        // Customizer (Personalizados)
+        function setupCustomizer() {
+            const imageInput = document.getElementById('custom-image-input');
+            const matRange = document.getElementById('custom-mat-range');
+            const customAddToCartBtn = document.getElementById('custom-add-to-cart');
+
+            // Handle Image Upload
+            imageInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    if (file.size > 5 * 1024 * 1024) {
+                        alert("El archivo excede los 5MB de límite.");
+                        return;
+                    }
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        customizerState.image = event.target.result;
+                        customizerState.imageName = "Foto Cargada (" + file.name + ")";
+                        document.getElementById('custom-preview-img').src = event.target.result;
+                        document.getElementById('custom-preview-img').classList.remove('hidden');
+                        document.getElementById('custom-placeholder').classList.add('hidden');
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Handle Mat range slider change
+            matRange.addEventListener('input', (e) => {
+                const val = parseInt(e.target.value);
+                customizerState.matSize = val;
+                document.getElementById('paspartu-val-label').innerText = val === 0 ? "Sin paspartú" : val + " cm";
+                
+                // Update preview padding to simulate matting visually
+                const previewFrame = document.getElementById('custom-preview-frame');
+                const paddingPx = val * 5; // conversion factor for preview
+                previewFrame.style.padding = `${paddingPx}px`;
+
+                updateCustomizerPricing();
+            });
+
+            // Add Custom Frame to Cart
+            customAddToCartBtn.addEventListener('click', () => {
+                const sizeLabel = customizerState.size === "30x40" ? "30x40 cm" : (customizerState.size === "50x70" ? "50x70 cm" : "70x100 cm");
+                const frameLabel = customizerState.frame === "oak" ? "Roble Natural" : (customizerState.frame === "black" ? "Negro Abisal" : "Blanco Glaciar");
+                const finalPrice = calculateCustomPrice();
+                
+                const customItem = {
+                    id: `custom-${Date.now()}`,
+                    name: `Cuadro Personalizado (${customizerState.imageName})`,
+                    price: finalPrice,
+                    image: customizerState.image,
+                    size: sizeLabel,
+                    frame: frameLabel,
+                    matSize: customizerState.matSize === 0 ? "Sin paspartú" : `${customizerState.matSize} cm`,
+                    quantity: 1,
+                    type: "custom"
+                };
+
+                addToCart(customItem);
+                showToast("¡Cuadro personalizado añadido al carrito!");
+            });
+
+            // Initial pricing update
+            updateCustomizerPricing();
+        }
+
+        function setSampleImage() {
+            customizerState.image = "images/print_nature.jpg";
+            customizerState.imageName = "Lámina de Muestra";
+            document.getElementById('custom-preview-img').src = "images/print_nature.jpg";
+            document.getElementById('custom-preview-img').classList.remove('hidden');
+            document.getElementById('custom-placeholder').classList.add('hidden');
+        }
+
+        function selectCustomFrame(frameKey) {
+            customizerState.frame = frameKey;
+            
+            // Buttons UI Update
+            const btns = document.querySelectorAll('.custom-frame-btn');
+            btns.forEach(btn => {
+                if (btn.getAttribute('data-frame') === frameKey) {
+                    btn.className = "custom-frame-btn active border-2 border-secondary bg-white rounded-lg p-3 text-center text-xs font-bold text-primary transition-all flex flex-col items-center gap-1.5";
+                } else {
+                    btn.className = "custom-frame-btn border border-outline-variant bg-white hover:border-primary rounded-lg p-3 text-center text-xs font-bold text-primary transition-all flex flex-col items-center gap-1.5";
+                }
+            });
+
+            // Visual Frame Preview Class Update
+            const preview = document.getElementById('custom-preview-frame');
+            preview.className = `border-[16px] frame-${frameKey} transition-all duration-300 max-w-[85%] w-[320px] aspect-[3/4] flex items-center justify-center overflow-hidden mat-border relative bg-[#faf8f6] shadow-2xl z-10`;
+
+            updateCustomizerPricing();
+        }
+
+        function selectCustomSize(sizeKey, basePrice) {
+            customizerState.size = sizeKey;
+            customizerState.basePrice = basePrice;
+            
+            // Buttons UI Update
+            const btns = document.querySelectorAll('.custom-size-btn');
+            btns.forEach(btn => {
+                if (btn.getAttribute('data-size') === sizeKey) {
+                    btn.className = "custom-size-btn active border-2 border-secondary bg-white rounded-lg p-3 text-center text-xs font-bold text-primary transition-all";
+                } else {
+                    btn.className = "custom-size-btn border border-outline-variant bg-white hover:border-primary rounded-lg p-3 text-center text-xs font-bold text-primary transition-all";
+                }
+            });
+
+            updateCustomizerPricing();
+        }
+
+        function calculateCustomPrice() {
+            let total = customizerState.basePrice;
+            
+            // Frame additions (custom scale)
+            const frameFactor = customizerState.size === "30x40" ? 1 : (customizerState.size === "50x70" ? 1.5 : 2.2);
+            const baseFramePrice = PRICING.frames[customizerState.frame];
+            total += Math.round(baseFramePrice * frameFactor);
+
+            // Matting additions
+            if (customizerState.matSize > 0) {
+                total += Math.round(1500 * (customizerState.matSize / 5) * frameFactor);
+            }
+            return total;
+        }
+
+        // Customizer pricing update
+        function updateCustomizerPricing() {
+            const finalPrice = calculateCustomPrice();
+            document.getElementById('custom-total-price').innerText = `$${finalPrice.toLocaleString('es-AR')}`;
+        }
+
+        // Cart Actions
+        function addToCart(item) {
+            // Check if standard item already in cart (exact matching parameters)
+            const existingIndex = cart.findIndex(i => 
+                i.type === "standard" && 
+                i.name === item.name && 
+                i.size === item.size && 
+                i.frame === item.frame
+            );
+
+            if (existingIndex > -1) {
+                cart[existingIndex].quantity += 1;
+            } else {
+                cart.push(item);
+            }
+
+            saveCart();
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            const countBadge = document.getElementById('cart-count');
+            const totalItems = cart.reduce((acc, curr) => acc + curr.quantity, 0);
+            
+            if (totalItems > 0) {
+                countBadge.innerText = totalItems;
+                countBadge.classList.remove('hidden');
+            } else {
+                countBadge.classList.add('hidden');
+            }
+        }
+
+        function saveCart() {
+            localStorage.setItem('decorhouse_cart', JSON.stringify(cart));
+        }
+
+        function renderCart() {
+            const container = document.getElementById('cart-items-container');
+            const footer = document.getElementById('cart-footer');
+            const emptyMessage = document.getElementById('empty-cart-message');
+            
+            // Clear items
+            container.innerHTML = '';
+            
+            if (cart.length === 0) {
+                container.appendChild(emptyMessage);
+                emptyMessage.classList.remove('hidden');
+                footer.classList.add('hidden');
+                return;
+            }
+
+            emptyMessage.classList.add('hidden');
+            footer.classList.remove('hidden');
+
+            let grandTotal = 0;
+
+            cart.forEach((item, index) => {
+                const subtotal = item.price * item.quantity;
+                grandTotal += subtotal;
+
+                const itemDiv = document.createElement('div');
+                itemDiv.className = "flex gap-4 border-b border-outline-variant/30 pb-6 items-stretch";
+                
+                // Truncate image representation if base64 to keep DOM clean
+                const imgSrc = item.image.startsWith('data:') ? item.image : item.image;
+                
+                itemDiv.innerHTML = `
+                    <div class="w-20 h-24 bg-surface-container border border-outline-variant/40 rounded overflow-hidden flex-shrink-0 flex items-center justify-center p-1">
+                        <img src="${imgSrc}" class="w-full h-full object-cover rounded-xs" alt="${item.name}">
+                    </div>
+                    <div class="flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <h4 class="text-sm font-bold text-primary font-body-lg line-clamp-1">${item.name}</h4>
+                                <button onclick="removeFromCart('${item.id}')" class="text-outline hover:text-error transition-colors flex-shrink-0 ml-2" aria-label="Eliminar producto">
+                                    <span class="material-symbols-outlined text-xl">delete</span>
+                                </button>
+                            </div>
+                            <p class="text-[10px] text-on-surface-variant font-medium mt-1 leading-relaxed">
+                                Tamaño: ${item.size} | Marco: ${item.frame} ${item.matSize ? `<br>Paspartú: ${item.matSize}` : ''}
+                            </p>
+                        </div>
+                        
+                        <div class="flex justify-between items-center mt-3">
+                            <!-- Quantities -->
+                            <div class="flex items-center border border-outline-variant/60 rounded bg-white overflow-hidden">
+                                <button onclick="updateQty('${item.id}', -1)" class="px-2 py-1 text-primary hover:bg-surface-container transition-colors font-bold text-sm" aria-label="Disminuir">-</button>
+                                <span class="px-3 text-xs font-bold text-primary select-none">${item.quantity}</span>
+                                <button onclick="updateQty('${item.id}', 1)" class="px-2 py-1 text-primary hover:bg-surface-container transition-colors font-bold text-sm" aria-label="Aumentar">+</button>
+                            </div>
+                            <span class="text-sm font-bold text-primary font-display">$${subtotal.toLocaleString('es-AR')}</span>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(itemDiv);
+            });
+
+            document.getElementById('cart-total').innerText = `$${grandTotal.toLocaleString('es-AR')}`;
+            
+            // Set up checkout click event listener once
+            const checkoutBtn = document.getElementById('checkout-btn');
+            checkoutBtn.onclick = () => processCheckout(grandTotal);
+        }
+
+        function updateQty(itemId, delta) {
+            const index = cart.findIndex(i => i.id === itemId);
+            if (index > -1) {
+                cart[index].quantity += delta;
+                if (cart[index].quantity <= 0) {
+                    cart.splice(index, 1);
+                }
+                saveCart();
+                updateCartCount();
+                renderCart();
+            }
+        }
+
+        // Remove from cart
+        function removeFromCart(itemId) {
+            cart = cart.filter(i => i.id !== itemId);
+            saveCart();
+            updateCartCount();
+            renderCart();
+        }
+
+        // WhatsApp Checkout Integration
+        function processCheckout(grandTotal) {
+            const name = document.getElementById('checkout-name').value.trim();
+            const address = document.getElementById('checkout-address').value.trim();
+
+            if (!name || !address) {
+                alert("Por favor, completa tu Nombre y Dirección de envío.");
+                return;
+            }
+
+            // Create WhatsApp message string
+            let msg = `¡Hola! Quisiera confirmar el siguiente pedido en *decorhouse*:\n\n`;
+            
+            cart.forEach((item, index) => {
+                msg += `*${index + 1}. ${item.name}* (x${item.quantity})\n`;
+                msg += `   - Medida: ${item.size}\n`;
+                msg += `   - Marco: ${item.frame}\n`;
+                if (item.matSize) {
+                    msg += `   - Paspartú: ${item.matSize}\n`;
+                }
+                msg += `   - Subtotal: $${(item.price * item.quantity).toLocaleString('es-AR')}\n\n`;
+            });
+
+            msg += `*TOTAL A PAGAR: $${grandTotal.toLocaleString('es-AR')}*\n\n`;
+            msg += `*Datos del Cliente:*\n`;
+            msg += `- Nombre: ${name}\n`;
+            msg += `- Dirección/Localidad: ${address}\n\n`;
+            msg += `Quedo a la espera de los datos para la transferencia o link de pago. ¡Gracias!`;
+
+            // Open WhatsApp Link
+            const whatsappUrl = `https://wa.me/542646124958?text=${encodeURIComponent(msg)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            // Clear cart post checkout
+            cart = [];
+            saveCart();
+            updateCartCount();
+            
+            // Close Cart Drawer
+            const cartDrawer = document.getElementById('cart-drawer');
+            const cartBackdrop = document.getElementById('cart-backdrop');
+            
+            // Simulate drawer slide out
+            cartDrawer.querySelector('.drawer-content').classList.add('translate-x-full');
+            cartDrawer.classList.add('opacity-0');
+            setTimeout(() => {
+                cartDrawer.classList.add('hidden');
+            }, 300);
+            
+            showToast("¡Pedido enviado por WhatsApp!");
+        }
+
+        // Contact Form
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('contact-name').value.trim();
+            const phone = document.getElementById('contact-phone').value.trim();
+            const message = document.getElementById('contact-message').value.trim();
+
+            const text = `¡Hola decorhouse! Mi nombre es *${name}* (${phone}).\nTe contacto por la siguiente consulta:\n\n"${message}"`;
+            const url = `https://wa.me/542646124958?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
+
+            document.getElementById('contact-form').reset();
+            showToast("¡Consulta enviada por WhatsApp!");
+        }
+    </script>
+</body>
+</html>
